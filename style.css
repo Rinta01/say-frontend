@@ -1,0 +1,132 @@
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+.container * {
+	letter-spacing: -0.24px;
+	line-height: 48px;
+	max-width: 800px;
+}
+.message-info {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	color: #0119f4;
+	font-size: 18px;
+}
+.logo {
+	border-radius: 8px;
+	margin-right: 0.5em;
+}
+.message {
+	margin: 0.5em 0;
+	color: #030303;
+	font-size: 36px;
+	font-weight: bold;
+}
+.published {
+	color: #a1a4c1;
+	font-size: 18px;
+	position: relative;
+}
+.published::before {
+	content: '';
+	width: 1.25em;
+	height: 1px;
+	border-top: 1px solid #a1a4c1;
+	position: absolute;
+}
+.links {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: 1em;
+}
+.links a {
+	background-color: #eff0fb;
+	border-radius: 4px;
+	padding: 0 0.75em;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	transition: 0.15s ease-in-out;
+	transition-property: box-shadow, transform;
+	font-size: 18px;
+	color: #0119f4;
+}
+.links a:hover {
+	box-shadow: 0px 4px 4px rgba(156, 160, 201, 0.5);
+	transform: translateY(-2px);
+}
+.links a:focus {
+	outline: none;
+}
+.links a:first-child {
+	margin-right: 1em;
+}
+.links a svg {
+	margin-right: 0.5em;
+}
+.copied {
+	font-size: 18px;
+	color: #0119f4;
+	opacity: 0;
+	transition: opacity 0.1s ease-in-out;
+}
+.copied.visible {
+	opacity: 1;
+}
+textarea {
+	display: none;
+}
+@media screen and (max-width: 820px) {
+	.container {
+		max-width: 85%;
+	}
+	.container * {
+		line-height: 26px;
+	}
+	.message-info {
+		flex-direction: column;
+		align-items: flex-start;
+		max-width: 95%;
+		font-size: 18px;
+	}
+	.message-info svg {
+		margin-bottom: 0.5em;
+	}
+	.message {
+		font-size: 24px;
+		line-height: 32px;
+	}
+	.links {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.links a:first-child {
+		margin-right: 0;
+		margin-bottom: 1em;
+	}
+	.published {
+		margin-top: 1em;
+		margin-bottom: 0.7em;
+	}
+	.published::before {
+		top: -0.5em;
+	}
+	.links a {
+		line-height: 36px;
+	}
+}
