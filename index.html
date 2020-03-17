@@ -11,6 +11,23 @@
     <link rel="icon" href="favicon.png" type="image/png" />
     <link rel="stylesheet" href="style.css">
     <script>
+        function renderMessage(resp) {
+            console.log(resp);
+        }
+        
+        function loadMessage() {
+            const mid = location.split("#")[1];
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    renderMessage(xhr.response);
+                }
+            }
+            xhr.open("GET", "https://testnodes.wavesnodes.com/addresses/data/3N9uzN2kjrwCnrmHAhw7m3FdKhkJ69SGL6F/"+mid);
+            xhr.send();
+        }
+            
+        
         function copy(e) {
             e.preventDefault();
             navigator.clipboard.writeText(window.location.href)
@@ -22,6 +39,7 @@
                 document.querySelector('#share').style.pointerEvents = 'all';
             }, 3500)
         }
+        
         window.onload = function () {
             document.querySelector('#share').addEventListener('click', copy)
         }
