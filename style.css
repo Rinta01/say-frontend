@@ -137,4 +137,7 @@ textarea {
 	.links a {
 		line-height: 36px;
 	}
+	.copied{
+		margin-top: .5em;
+	}
 }
