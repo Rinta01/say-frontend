@@ -20,7 +20,7 @@
 
         function renderMessage(resp) {
             q("#share-link").href = location.href;
-            q("#message-id").innerText = resp["key"];
+            // q("#message-id").innerText = resp["key"];
             q("#user-id").innerText = resp["key"].split("_")[0];
             q("#user-id").href = "https://wavesexplorer.com/testnet/address/"+resp["key"].split("_")[0];
             q("#message-date").innerText = getTime(resp["value"].split(" // ")[0]);
@@ -77,7 +77,7 @@
                     fill="white" />
             </svg>
             <div class="message-info-text">
-                Message <span id="message-id">Y</span> on blockchain
+                View Message on Blockchain
             </div>
         </div>
         <p class="message" id="message-text"></p>
