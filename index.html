@@ -26,7 +26,7 @@
             q("#message-date").innerText = getTime(resp["value"].split(" // ")[0]);
             q("#message-text").innerText = resp["value"].split(" // ")[1];
             q(".message-info").onclick = () => {window.open("https://wavesexplorer.com/testnet/address/3N9uzN2kjrwCnrmHAhw7m3FdKhkJ69SGL6F/data")};
-            console.log(resp);
+            //console.log(resp);
         }
         
         function loadMessage() {
